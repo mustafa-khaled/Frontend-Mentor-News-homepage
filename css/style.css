@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+
+/* Start Global  Rules*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:root {
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+    --transition: .3s;
+    --line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+p {
+    font-size: 15px;
+}
+
+
+/* End Global  Rules*/
+
+/* ###################################################### */
+
+/* Start Header */
+header {
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
+header .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .content ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+header .content ul li {
+    margin-left: 30px;
+    cursor: pointer;
+    color: var(--dark-grayish-blue);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+header .content ul li:hover {
+    color: var(--soft-red);
+}
+
+header .content .menu {
+    display: none;
+    font-size: 30px;
+}
+
+@media (max-width:1000px) {
+    header .content .menu {
+        display: block;
+        color: var(--very-dark-blue);
+        cursor: pointer;
+    }
+
+    header .content ul {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        display: block;
+        background-color: var(--off-white);
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50%;
+        z-index: 100;
+        padding-top: 200px;
+        transition: var(--transition);
+        -webkit-transition: var(--transition);
+        -moz-transition: var(--transition);
+        -ms-transition: var(--transition);
+        -o-transition: var(--transition);
+    }
+
+    header .content ul.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .content ul li {
+        margin-bottom: 50px;
+        color: var(--very-dark-blue);
+    }
+}
+
+@media (max-width:500px) {
+    header .content ul {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* End Header */
+
+/* ###################################################### */
+/* Start Main Section  */
+.main-section {
+    padding-top: 0;
+}
+
+.main-section .landing {
+    display: flex;
+    gap: 50px;
+}
+
+.main-section .landing img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.main-section .landing .box1 .content-text {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+}
+
+.main-section .landing .box1 h1 {
+    font-size: 45px;
+    color: var(--very-dark-blue);
+    font-weight: 800;
+}
+
+.main-section .landing .box1 .content-text p {
+    color: var(--dark-grayish-blue);
+    line-height: var(--line-height);
+    margin-bottom: 15px;
+}
+
+.main-section .landing .box1 .content-text button {
+    background-color: var(--soft-red);
+    border: none;
+    padding: 10px 20px;
+    color: var(--off-white);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+.main-section .landing .box1 .content-text button:hover {
+    background-color: var(--very-dark-blue);
+}
+
+.main-section .landing .box2 {
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+    padding: 20px 25px;
+}
+
+.main-section .landing .box2 h2 {
+    color: var(--soft-orange);
+    font-size: 30px;
+}
+
+.main-section .landing .box2 article {
+    margin: 30px 0;
+}
+
+.main-section .landing .box2 article h3:hover {
+    color: var(--soft-orange);
+    cursor: pointer;
+}
+
+.main-section .landing .box2 article p {
+    margin-top: 10px;
+    padding-bottom: 30px;
+    color: var(--dark-grayish-blue);
+    line-height: var(--line-height);
+    border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+@media (max-width:1000px) {
+    .main-section .landing {
+        flex-direction: column;
+    }
+
+    .main-section .landing img {
+        content: url(../assets/images/image-web-3-mobile.jpg);
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .main-section .landing .box1 .content-text {
+        gap: 60px;
+    }
+}
+
+@media (max-width:460px) {
+    .main-section .landing .box1 .content-text button {
+        padding: 10px;
+    }
+}
+
+/* End Main Section */
+
+/* ###################################################### */
+
+/* Start last section */
+.last-section .last {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin: 40px auto;
+}
+
+.last-section .last img {
+    width: 100px;
+}
+
+.last-section .last article {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.last-section .last article span {
+    color: var(--dark-grayish-blue);
+    font-size: 28px;
+}
+
+.last-section .last article h4 {
+    padding: 10px 0;
+    font-weight: 800;
+}
+
+.last-section .last article p {
+    color: var(--dark-grayish-blue);
+    line-height: var(--line-height);
+    max-width: 210px;
+}
+
+/* End last section */
+/* Start Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* End Footer */
