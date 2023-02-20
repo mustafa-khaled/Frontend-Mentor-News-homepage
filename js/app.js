@@ -2,9 +2,7 @@ let menuToggle = document.querySelector(".menu");
 let ul = document.querySelector("ul");
 let openList = document.querySelector(".open-list");
 
-console.log(menuToggle);
-console.log(ul);
-console.log(openList);
+
 
 
 
